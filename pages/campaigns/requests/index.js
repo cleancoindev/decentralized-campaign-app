@@ -12,17 +12,18 @@ class RequestIndex extends Component{
         const campaign = Campaign(address);
         const requestCount = await campaign.methods.getRequestCount().call();
         const approversCount = await campaign.methods.approversCount().call();
+                                                      
+        console.log("requestCount " + requestCount);
+        console.log("approversCount "+approversCount);
 
-        console.log(requestCount);
-
-        const requests = await Promise.all(
-            Array(requestCount).fill().map((element, index) => {
+        let requests = await Promise.all(
+            Array(parseInt(requestCount)).fill().map((element, index) => {
                 return campaign.methods.requests(index).call();
             })
         );
 
+        console.log(address);
         console.log(requests);
-
         return {address, requests, requestCount, approversCount};
     }
 
@@ -65,7 +66,6 @@ class RequestIndex extends Component{
                     </Header>
                     <Body>{this.renderRows()}</Body>
                 </Table>
-
                 <div>Found {this.props.requestCount} requests.</div>
             </Layout>
         );
