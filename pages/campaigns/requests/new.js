@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Form, Button, Message, Input } from 'semantic-ui-react';
-import Campaign from '../../../campaign';
-import web3 from '../../../web3';
+import Campaign from '../../../ethereum/campaign';
+import web3 from '../../../ethereum/web3';
 import Layout from '../../../components/Layout';
 import { Link, Router } from '../../../routes';
 
@@ -36,7 +36,6 @@ class RequestNew extends Component{
             ).send({
                 from:accounts[0]
             });
-
             //Router.pushRoute(`/campaign/${this.props.address}/requests`);
         }catch(err){
             this.setState({errorMessage:err.Message});

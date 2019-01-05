@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
-import factory from '../../factory';
-import web3 from '../../web3';
+import factory from '../../ethereum/factory';
+import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
 
 class CampaignNew extends Component{

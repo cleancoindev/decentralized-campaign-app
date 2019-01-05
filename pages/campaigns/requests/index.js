@@ -3,7 +3,7 @@ import { Button,Table } from 'semantic-ui-react';
 import { Link } from '../../../routes';
 import Layout from '../../../components/Layout';
 import RequestRow from '../../../components/RequestRow';
-import Campaign from '../../../campaign';
+import Campaign from '../../../ethereum/campaign';
 
 class RequestIndex extends Component{
 
