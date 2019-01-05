@@ -8,3 +8,4 @@ Solidity
 Web3.js
 Next.js
 ReactJS
+Semantic-ui-react
